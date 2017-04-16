@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MisContactos</string>
+    <string name="contacto_nombre">Paco Montes</string>
+    <string name="contacto_telefono">666 888 999</string>
+    <string name="contacto_email">paco@tamareo.es</string>
+
+    <string name="pnombre">nombre</string>
+    <string name="ptelefono">telefono</string>
+    <string name="pemail">email</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="plike">0 like</string>
+
+</resources>

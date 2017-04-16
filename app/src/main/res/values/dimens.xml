@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="nombre_contacto">35sp</dimen>
+    <dimen name="telefono_contacto">20sp</dimen>
+    <dimen name="corner_radius_cardview">4dp</dimen>
+</resources>
