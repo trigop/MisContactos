@@ -6,57 +6,33 @@ package com.navandu.miscontactos.pojo;
 
 public class Contacto {
 
-    private int id;
-    private String nombre;
-    private String telefono;
-    private String email;
-    private int foto;
-    private int likes;
+    private String id;
+    private String nombreCompleto;
+    private String urlFoto;
+    private int likes = 0;
 
-
-
-    public Contacto(String nombre, String telefono, String email, int foto, int likes) {
-        this.nombre = nombre;
-        this.telefono = telefono;
-        this.email = email;
-        this.foto = foto;
-        this.likes = likes;
+    public String getId() {
+        return id;
     }
 
-    public Contacto() {
-
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreCompleto() {
+        return nombreCompleto;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreCompleto(String nombreCompleto) {
+        this.nombreCompleto = nombreCompleto;
     }
 
-    public String getTelefono() {
-        return telefono;
+    public String getUrlFoto() {
+        return urlFoto;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public int getFoto() {
-        return foto;
-    }
-
-    public void setFoto(int foto) {
-        this.foto = foto;
+    public void setUrlFoto(String urlFoto) {
+        this.urlFoto = urlFoto;
     }
 
     public int getLikes() {
@@ -67,11 +43,14 @@ public class Contacto {
         this.likes = likes;
     }
 
-    public int getId() {
-        return id;
+    public Contacto(String urlFoto, String nombreCompleto, int likes) {
+        this.urlFoto = urlFoto;
+        this.nombreCompleto = nombreCompleto;
+        this.likes = likes;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public Contacto() {
+
     }
+
 }

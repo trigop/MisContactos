@@ -8,5 +8,7 @@ public interface IRecyclerViewFragmentPresenter {
 
     public void obetenerContactosBaseDatos();
 
+    void obtenerMediosRecientes();
+
     public void mostrarContactosRV();
 }

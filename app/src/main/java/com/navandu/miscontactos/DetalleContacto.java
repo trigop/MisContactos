@@ -11,43 +11,54 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 public class DetalleContacto extends AppCompatActivity {
 
 
-    private TextView tvNombre;
-    private TextView tvEmail;
-    private TextView tvTelefono;
+    //private TextView tvNombre;
+    //private TextView tvEmail;
+    //private TextView tvTelefono;
+
+    private static final String KEY_EXTRA_URL = "url";
+    private static final String KEY_EXTRA_LIKES = "like";
+
+    private ImageView imgFotoContactoDetalle;
+    private TextView tvLikeDetalle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detalle_contacto);
+        setContentView(R.layout.activity_detalle_contacto_foto);
 
-        Toolbar miActionBar = (Toolbar) findViewById(R.id.miActionBar);
+        /*Toolbar miActionBar = (Toolbar) findViewById(R.id.miActionBar);
         setSupportActionBar(miActionBar);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
 
 
         Bundle parametros = getIntent().getExtras();
-        String nombre = parametros.getString(getResources().getString(R.string.pnombre));
-        String telefono = parametros.getString(getResources().getString(R.string.ptelefono));
-        String email = parametros.getString(getResources().getString(R.string.pemail));
+        String url = parametros.getString(KEY_EXTRA_URL);
+        int likes = parametros.getInt(KEY_EXTRA_LIKES);
 
 
-        tvNombre = (TextView) findViewById(R.id.tvNombre);
-        tvEmail = (TextView) findViewById(R.id.tvEmail);
-        tvTelefono = (TextView) findViewById(R.id.tvTelefono);
 
+        tvLikeDetalle = (TextView) findViewById(R.id.tvLikeDetalle);
+        tvLikeDetalle.setText(String.valueOf(likes));
 
-        tvNombre.setText(nombre);
-        tvTelefono.setText(telefono);
-        tvEmail.setText(email);
+        imgFotoContactoDetalle = (ImageView) findViewById(R.id.imgFotoContactoDetalle);
+
+        Picasso.with(this)
+                .load(url)
+                .placeholder(R.drawable.like)
+                .into(imgFotoContactoDetalle);
+
     }
 
-
+/*
     public void llamar(View v) {
 
         String telefono = tvTelefono.getText().toString();
@@ -94,5 +105,5 @@ public class DetalleContacto extends AppCompatActivity {
         }
 
         return super.onKeyDown(keyCode, event);
-    }
+    }*/
 }
